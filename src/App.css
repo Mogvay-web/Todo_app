@@ -1,38 +1,82 @@
-.App {
-  text-align: center;
+:root {
+  --white: #ffffff;
+  --header-image: url('/src/images/bg-desktop-dark.jpg');
+  --background-color: hsl(235, 21%, 11%);
+  --switch-image: url('/src/images/icon-sun.svg');
+  --cross-image: url('/src/images/icon-cross.svg');
+  --to-do-item-color-1: hsl(235, 24%, 19%);
+  --to-do-item-color-2: hsl(233, 14%, 35%);
+  --to-do-item-color-3: hsl(236, 33%, 92%);
+  --to-do-item-color-4: linear-gradient(
+    135deg,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+  --to-do-item-color-5: hsl(234, 39%, 85%);
+  --to-do-item-color-6: hsl(236, 33%, 92%);
+  --to-do-item-color-7: hsl(233, 14%, 35%);
+  --blue: hsl(220, 98%, 61%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+[data-theme='light'] {
+  --header-image: url('/src/images/bg-desktop-light.jpg');
+  --switch-image: url('/src/images/icon-moon.svg');
+  --background-color: hsl(236, 33%, 92%);
+  --to-do-item-color-1: hsl(0, 0%, 98%);
+  --to-do-item-color-2: hsl(233, 11%, 84%);
+  --to-do-item-color-3: hsl(235, 19%, 35%);
+  --to-do-item-color-5: hsl(236, 9%, 61%);
+  --to-do-item-color-6: hsl(235, 19%, 35%);
+  --to-do-item-color-7: hsl(236, 9%, 61%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 112.5%;
+}
+
+body {
+  font-family: 'JosefinSans-Regular';
+}
+
+@font-face {
+  font-family: 'JosefinSans-Regular';
+  src: url('/src/fonts/JosefinSans-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'JosefinSans-Bold';
+  src: url('/src/fonts/JosefinSans-Bold.ttf');
+  font-weight: 700;
+}
+
+@media (width < 768px) {
+  html {
+    font-size: 92.5%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (width < 576px) {
+  html {
+    font-size: 67.7%;
   }
-  to {
-    transform: rotate(360deg);
+
+  :root {
+    --header-image: url('/src/images/bg-mobile-dark.jpg');
+  }
+
+  [data-theme='light'] {
+    --header-image: url('/src/images/bg-mobile-light.jpg');
+  }
+}
+
+@media (width < 375px) {
+  html {
+    font-size: 62.7%;
   }
 }
